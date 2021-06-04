@@ -42,7 +42,7 @@ The symbolic links can be tested using a separate script included in this reposi
 
 ## `test.sh`
 
-1. It will check if the `results.txt` exists. If not, it will return `Nothing test here.` and exit (`exit 1`).
+1. It will check if the `results.txt` exists. If not, it will return `Nothing to test here.` and exit (`exit 1`).
 1. If yes, the script will parse path by getting the first field using `awk` and by removing the single quotes globally (`'`) using `sed`. After parsing, the values will be assigned to `FILES` variable.
 1. Using the `FILES` variable, the script will check if each file exists and if it is a symbolic link.
 1. If not, it will display an error that it does not exist.
