@@ -14,7 +14,7 @@ else
         if [[ -f "$X" && -L "$X" ]]; then
             echo "$X is a symlink."
         else
-            echo "\"$X\" not found."
+            echo "$X not found."
         fi
     done
 fi
