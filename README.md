@@ -91,4 +91,4 @@ docker run --name devexp --rm -it -v $PWD/devexp:/root/devexp -w /root/devexp ub
 
 # Demo
 
-![Demo](https://i.imgur.com/ks6CKKH.gif)
+![Demo](https://github.com/jpdoria/devexp/blob/main/demo.gif)
