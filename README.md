@@ -28,25 +28,25 @@
 
 # About
 
-This project creates symbolic links with the same base filename only if the file extension is `*.s` within the directory that is provided as an argument, and skips the rest of the files. The symbolic link ends in `*.t` extension.
+This project creates symbolic links with the same base filename if the file extension is `*.s` within the directory that is provided as an argument, and skips the rest of the files. Also, one should know that the symbolic link always ends in `*.t` extension.
 
-The symbolic links can be tested using a separate script included in this repository.
+These symbolic links can be tested using a separate script included in this repository.
 
 # How it works
 
 ## `start.sh`
 
 1. It will check if the directory argument is empty. If yes, it will display the `usage` and exit (`exit 1`).
-1. If not, the script will start checking if there are files that end in `*.s` extension inside the provided path, and it will exit if files do not exist (`exit 2`).
+1. If the argument is not empty, the script will start checking if there are files that end in `*.s` extension inside the provided path, and it will exit if such files do not exist (`exit 2`).
 1. If the files are present, the script will start creating symbolic links and it will write the paths to `results.txt`.
 
 ## `test.sh`
 
 1. It will check if the `results.txt` exists. If not, it will return `Nothing to test here.` and exit (`exit 1`).
-1. If yes, the script will parse path by getting the first field using `awk` and by removing the single quotes globally (`'`) using `sed`. After parsing, the values will be assigned to `FILES` variable.
+1. If the `results.txt` does exist, the script will parse path by getting the first field using `awk` and by removing the single quotes globally (`'`) using `sed`. After parsing, the values will be assigned to `FILES` variable.
 1. Using the `FILES` variable, the script will check if each file exists and if it is a symbolic link.
-1. If not, it will display an error that it does not exist.
-1. Successful test results will display something like this `/path/to/file is a symlink`.
+1. If it is not a symbolic link, it will display an error that it does not exist.
+1. Successful test results will display something like this: `/path/to/file is a symlink`.
 
 # Prerequisites
 
